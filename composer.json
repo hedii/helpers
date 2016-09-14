@@ -1,0 +1,42 @@
+{
+    "name": "hedii/helpers",
+    "description": "A collection of php helper functions",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "hedii",
+        "helpers",
+        "php"
+    ],
+    "authors": [
+        {
+            "name": "hedii",
+            "email": "hedi.chaibs@gmail.com",
+            "homepage": "https://hedichaibi.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/hedii/helpers/issues",
+        "source": "https://github.com/hedii/helpers",
+        "email": "hedi.chaibs@gmail.com"
+    },
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.5"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hedii\\Helpers\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    }
+}
