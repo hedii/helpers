@@ -6,6 +6,28 @@ class HelpersTest extends TestCase
 {
     private $string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
 
+    private $validUrls = [
+        'ftp://ftp.is.co.za.example.org/rfc/rfc1808.txt',
+        'gopher://spinaltap.micro.umn.example.edu/00/Weather/California/Los%20Angeles',
+        'http://www.ietf.org/rfc/rfc2396.txt',
+        'http://www.math.uio.no.example.net/faq/compression-faq/part1.html',
+        'https://www.youtube.com/watch?v=6FOUqQt3Kg0',
+        'ldap://[2001:db8::7]/c=GB?objectClass?one',
+        'mailto:John.Doe@example.com',
+        'mailto:mduerst@ifi.unizh.example.gov',
+        'news:comp.infosystems.www.servers.unix',
+        'news:comp.infosystems.www.servers.unix',
+        'telnet://192.0.2.16:80/',
+        'telnet://melvyl.ucop.example.edu/'
+    ];
+
+    private $invalidUrls = [
+        'example.com',
+        'http:/example.com/',
+        'tel:+1-816-555-1212',
+        'urn:oasis:names:specification:docbook:dtd:xml:4.1.2'
+    ];
+
     public function setUp()
     {
         parent::setUp();
@@ -99,6 +121,19 @@ class HelpersTest extends TestCase
         $this->assertInternalType('string', string_random());
         $this->assertEquals(32, strlen(string_random()));
         $this->assertEquals(16, strlen(string_random(16)));
+    }
+
+    public function test_it_should_have_is_url_helper()
+    {
+        foreach ($this->validUrls as $url) {
+            $this->assertTrue(is_url($url));
+            $this->assertInternalType('boolean', is_url($url));
+        }
+
+        foreach ($this->invalidUrls as $url) {
+            $this->assertFalse(is_url($url));
+            $this->assertInternalType('boolean', is_url($url));
+        }
     }
 
     public function test_it_should_have_class_basename_helper()

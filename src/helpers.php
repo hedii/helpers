@@ -237,6 +237,19 @@ if (! function_exists('string_finish')) {
     }
 }
 
+if (! function_exists('is_url')) {
+    /**
+     * Determine if a string is a valid url.
+     *
+     * @param string $string
+     * @return bool
+     */
+    function is_url($string)
+    {
+        return (bool) filter_var($string, FILTER_VALIDATE_URL);
+    }
+}
+
 if (! function_exists('class_basename')) {
     /**
      * Get the class "basename" of the given object / class.
@@ -263,3 +276,4 @@ if (! function_exists('is_windows_os')) {
         return strtolower(substr(PHP_OS, 0, 3)) === 'win';
     }
 }
+

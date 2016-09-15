@@ -37,6 +37,7 @@ composer require hedii/helpers
 - [string_contains](#string_contains)
 - [string_finish](#string_finish)
 - [string_random](#string_random)
+- [is_url](#is_url)
 - [class_basename](#class_basename)
 - [is_windows_os](#is_windows_os)
 
@@ -209,6 +210,23 @@ Generates a random string of the specified length.
 $string = string_random(40);
 
 // 6a2531aabec1fda11b0e0d9eaeb17d7ebfe1cdc5
+```
+
+---
+
+<a name="is_url"></a>
+#### `is_url(string $string)`
+
+Determine if a string is a valid url.
+
+```php
+is_url('http://example.com');
+
+// true
+
+is_url('tel:+1-111-222-333');
+
+// false
 ```
 
 ---
