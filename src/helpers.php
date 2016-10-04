@@ -1,6 +1,6 @@
 <?php
 
-if (! function_exists('str_random')) {
+if (! function_exists('string_random')) {
     /**
      * Generate a unique alpha numeric random string without uppercase letters.
      *
