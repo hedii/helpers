@@ -265,4 +265,4 @@ composer test
 
 helpers is released under the MIT Licence. See the bundled [LICENSE](https://github.com/hedii/helpers/blob/master/LICENSE.md) file for details.
 
-helpers contains some content from Laravel [illuminate/support](https://github.com/illuminate/support) package. See the [LARAVEL LICENSE](https://github.com/laravel/framework/blob/master/LICENSE.txt) file for details.
+helpers contains some content from Laravel [illuminate/support](https://github.com/illuminate/support) package. See the [LARAVEL LICENSE](https://github.com/laravel/framework/blob/master/LICENSE.md) file for details.
